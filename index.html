@@ -56,13 +56,13 @@
     </header>
     <main class="max-w-[1440px] my-[120px] mx-auto flex flex-col lg:flex-row gap-6 items-center lg:items-start">
         <!-- items section  -->
-        <div>
+        <div class="space-y-12">
             <!-- kitchenware section  -->
             <section>
                 <h3 class="text-[40px] font-semibold mb-8 text-center lg:text-left">Kitchenware</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- card 1   -->
-                    <div class="text-center w-[342px] h-[350px] bg-white rounded-lg">
+                    <div class="text-center w-[342px] h-[350px] bg-white rounded-lg" onclick="cardClick(this)">
                         <div class="item-bg rounded-lg px-24 py-8 w-[300px] h-[200px] mx-5 my-5"><img src="images/prod1.png" alt=""></div>
                         <div class="rating">
                             <input type="radio" name="rating-1" class="mask mask-star-2 bg-rating-color" />
@@ -201,26 +201,26 @@
                 <h4 class="text-2xl font-medium mb-4">Have Coupon?</h4>
                 <div class="border-2 border-gray-300 rounded-lg w-[294px] h-[56px] flex justify-between">
                     <input class="h-full w-[184px] p-4 rounded-lg text-xl" type="text" placeholder="Coupon code">
-                    <button class="bg-secondary-color h-full w-[100px] text-xl text-white font-semibold">Apply</button>
+                    <button class="btn btn-secondary  bg-secondary-color h-full w-[100px] text-xl text-white font-semibold rounded-lg" disabled>Apply</button>
                 </div>
             </section>
             <!-- checkout section  -->
             <section class="bg-white w-[342px] rounded-lg p-6">
                 <!-- new items container  -->
-                <div class="text-2xl font-medium">
+                <div id="new-item-container" class="text-2xl font-medium">
 
                 </div>
                 <hr>
                 <!-- price calculation  -->
                 <div class="mt-4 mb-6">
-                    <h4 class="text-2xl font-medium">Total Price: <span class="opacity-50"><span>0.00</span>TK</span></h2>
-                    <h4 class="text-2xl font-medium">Discount: <span class="opacity-50"><span>0.00</span>TK</span></h2>
-                    <h4 class="text-2xl font-medium">Total: <span class="opacity-50"><span>0.00</span>TK</span></h2>
+                    <h4 class="text-2xl font-medium">Total Price: <span class="opacity-50"><span id="total-price">0.00</span>TK</span></h2>
+                    <h4 class="text-2xl font-medium">Discount: <span class="opacity-50"><span id="discount">0.00</span>TK</span></h2>
+                    <h4 class="text-2xl font-medium">Total: <span class="opacity-50"><span id="net-price">0.00</span>TK</span></h2>
                    
                  
                 </div>
                 <hr>
-                <button class="bg-secondary-color h-full text-xl text-white font-semibold py-4 px-[72px] w-[294px] rounded-lg relative top-10" onclick="my_modal_1.showModal()">Make Purchase</button>
+                <button class="btn btn-secondary bg-secondary-color h-full text-xl text-white font-semibold py-4 w-[294px] rounded-lg relative top-10" disabled onclick="my_modal_1.showModal()">Make Purchase</button>
 
                 <!-- Open the modal using ID.showModal() method -->
                 <dialog id="my_modal_1" class="modal">
