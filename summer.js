@@ -1,6 +1,7 @@
 const discount = document.getElementById('discount');
 const netPrice = document.getElementById('net-price');
 const purchaseButton = document.getElementById('purchase-btn');
+const discountButton = document.getElementById('discount-btn');
 
 
 
@@ -25,8 +26,11 @@ function cardClick(target){
 
     const newTotalPrice = currentTotalPrice + clickedItemPriceValue;
     const newTotalPriceValue = newTotalPrice.toFixed(2);
+    const discountValue = parseFloat(discount.innerText);
+    const netTotalPrice = newTotalPriceValue - discountValue;
+    const netTotalPriceValue = netTotalPrice.toFixed(2);
     totalPrice.innerText = newTotalPriceValue;
-    netPrice.innerText = newTotalPriceValue; 
+    netPrice.innerText = netTotalPriceValue; 
     if(newTotalPriceValue > 0){
         purchaseButton.disabled = false;
     }
@@ -36,7 +40,7 @@ function cardClick(target){
     
 }
 
-const discountButton = document.getElementById('discount-btn');
+
 discountButton.addEventListener('click', function(event){
     let checkCode = event.target.parentNode.childNodes[1].value;
     if(checkCode === "SELL200"){
