@@ -64,6 +64,7 @@ function clearAll(){
     netPrice.innerText = '0.00'; 
     const newItemContainer = document.getElementById('new-item-container');
     newItemContainer.innerHTML = "";
+    document.getElementById('discount-code-input').value='';
     discountButton.disabled = true;
     purchaseButton.disabled = true; 
 
